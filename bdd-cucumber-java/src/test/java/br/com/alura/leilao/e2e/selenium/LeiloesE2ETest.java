@@ -26,12 +26,13 @@ public class LeiloesE2ETest extends E2ETestBase{
 		String nome = "Commodore Amiga";
 		String valor = "899.90";
 		String data = "04/08/2020";
+		String usuario = "fulano";
 		
 		novoLeilaoPage.preencheForm(nome, valor, data);
 		
 		leiloesPage.esperaCarregar();
 
-		assertTrue(leiloesPage.existe(nome, valor, data));
+		assertTrue(leiloesPage.existe(nome, valor, data, usuario));
 	}
 	
 	
@@ -41,12 +42,13 @@ public class LeiloesE2ETest extends E2ETestBase{
 		String nome = "Commodore Amiga";
 		String valor = "899.90";
 		String data = "04/08/2020";
+		String usuario = "fulano";
 		
 		novoLeilaoPage.preencheForm(nome, valor, data);
 		
 		leiloesPage.esperaCarregar();
 
-		assertTrue(leiloesPage.existe(nome, valor, data));
+		assertTrue(leiloesPage.existe(nome, valor, data, usuario));
 	}
 	
 }

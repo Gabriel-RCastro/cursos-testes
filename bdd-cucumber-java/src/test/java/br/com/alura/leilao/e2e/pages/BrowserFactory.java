@@ -11,27 +11,27 @@ public class BrowserFactory {
 //	http://chromedriver.storage.googleapis.com/index.html
 //	https://github.com/mozilla/geckodriver/releases	
 
-	public WebDriver createWebDriver() {
-		String webdriver = System.getProperty("browser", "chrome");
-		switch (webdriver) {
-			case "firefox":
-				return initFirefoxDriver();
-			case "chrome":
-				return initChromeDriver();
-			default:
-				return new HtmlUnitDriver();
-		}
-	}
+    public WebDriver createWebDriver() {
+        String webdriver = System.getProperty("browser", "firefox");
+        switch (webdriver) {
+            case "firefox":
+                return initFirefoxDriver();
+            case "chrome":
+                return initChromeDriver();
+            default:
+                return new HtmlUnitDriver();
+        }
+    }
 
-	private  WebDriver initChromeDriver() {
-		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\User\\Desktop\\bdd-java\\drivers\\chromedriver.exe");
-		return new ChromeDriver();
-	}
+    private WebDriver initChromeDriver() {
+        System.setProperty("webdriver.chrome.driver",
+                "C:\\Users\\User\\Desktop\\cursos-testes\\bdd-cucumber-java\\drivers\\chromedriver.exe");
+        return new ChromeDriver();
+    }
 
-	private  WebDriver initFirefoxDriver() {
-		System.setProperty("webdriver.gecko.driver",
-				"C:\\Users\\User\\Desktop\\bdd-java\\drivers\\geckodriver.exe");
-		return new FirefoxDriver();
-	}
+    private WebDriver initFirefoxDriver() {
+        System.setProperty("webdriver.gecko.driver",
+                "C:\\Users\\User\\Desktop\\cursos-testes\\bdd-cucumber-java\\drivers\\geckodriver.exe");
+        return new FirefoxDriver();
+    }
 }

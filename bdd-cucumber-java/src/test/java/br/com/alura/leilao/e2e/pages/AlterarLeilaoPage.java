@@ -6,15 +6,15 @@ import org.openqa.selenium.WebElement;
 
 public class AlterarLeilaoPage {
 
-	private WebDriver driver;
+    private final WebDriver driver;
 
-	public AlterarLeilaoPage(WebDriver driver) {
-		this.driver = driver;
-	}
+    public AlterarLeilaoPage(WebDriver driver) {
+        this.driver = driver;
+    }
 
-	public void preencheForm(String nome, String valor, String data) {
+    public void preencheForm(String nome, String valor, String data) {
 
-		WebElement txtNome = driver.findElement(By.name("nome"));
+        WebElement txtNome = driver.findElement(By.name("nome"));
         WebElement txtValor = driver.findElement(By.name("valorInicial"));
         WebElement txtData = driver.findElement(By.name("dataAbertura"));
 
@@ -26,6 +26,6 @@ public class AlterarLeilaoPage {
         txtData.sendKeys(data);
 
         txtNome.submit();
-	}
+    }
 
 }
